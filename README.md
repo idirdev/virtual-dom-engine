@@ -225,3 +225,7 @@ examples/
 ## License
 
 MIT
+
+## Performance
+
+Benchmarks against React fiber and Preact coming soon.
