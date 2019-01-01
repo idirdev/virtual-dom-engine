@@ -15,23 +15,24 @@ describe('createElement', () => {
   });
 
   it('creates a vnode with children', () => {
-    const child = createElement('span', {}, ['hello']);
-    const parent = createElement('div', {}, [child]);
+    const child = createElement('span', {}, 'hello');
+    const parent = createElement('div', {}, child);
     expect(parent.children).toHaveLength(1);
     expect(parent.children[0]).toBe(child);
   });
 
   it('handles text children', () => {
-    const node = createElement('p', {}, ['hello world']);
-    expect(node.children[0]).toBe('hello world');
+    const node = createElement('p', {}, 'hello world');
+    // Strings are converted to VTextNode objects
+    expect(node.children[0]).toEqual({ type: 'text', value: 'hello world' });
   });
 
   it('handles nested children', () => {
-    const node = createElement('ul', {}, [
-      createElement('li', {}, ['item 1']),
-      createElement('li', {}, ['item 2']),
-      createElement('li', {}, ['item 3']),
-    ]);
+    const node = createElement('ul', {},
+      createElement('li', {}, 'item 1'),
+      createElement('li', {}, 'item 2'),
+      createElement('li', {}, 'item 3'),
+    );
     expect(node.children).toHaveLength(3);
   });
 

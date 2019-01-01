@@ -1,4 +1,4 @@
-export { h, text } from './createElement';
+export { h, text, createElement } from './createElement';
 export { render, setProps, removeProp } from './render';
 export { diff } from './diff';
 export { patch } from './patch';

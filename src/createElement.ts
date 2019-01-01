@@ -53,3 +53,5 @@ function flattenChildren(children: any[]): VNode[] {
 
   return result;
 }
+
+export { h as createElement };
