@@ -229,3 +229,24 @@ MIT
 ## Performance
 
 Benchmarks against React fiber and Preact coming soon.
+
+---
+
+## 🇫🇷 Documentation en français
+
+### Description
+virtual-dom-engine est une implémentation de DOM virtuel construite de zéro en TypeScript à des fins éducatives. Ce projet démontre les concepts fondamentaux derrière des bibliothèques comme React : création d'arbres de nœuds virtuels, algorithme de diff et patching efficace du DOM réel. Une ressource précieuse pour comprendre les bases du rendu déclaratif en JavaScript.
+
+### Installation
+```bash
+npm install
+```
+
+### Utilisation
+```typescript
+import { h, render, diff, patch } from './src';
+
+const vdom = h('div', { class: 'app' }, h('p', {}, 'Bonjour'));
+render(vdom, document.getElementById('root'));
+```
+Consultez la documentation en anglais ci-dessus pour les détails de l'algorithme de diff et les exemples d'utilisation.
